@@ -10,7 +10,7 @@ function AllPostsPage(props) {
         <title>All Posts</title>
         <meta
           name="description"
-          content="A list of all programming ralated tutorials."
+          content="All about web development."
         />
       </Head>
       <Posts posts={props.posts} title="All Posts" />

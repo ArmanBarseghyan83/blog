@@ -7,7 +7,7 @@ async function hundler(req, res) {
       (!email || !email.includes("@") || !name || name.trim() === "",
       !message || message.trim() === "")
     ) {
-      res.status(422).json({ message: "Invalid input." });
+      res.status(422).json({ message: "Invalid input!" });
       return;
     }
     const newMessage = {
@@ -22,7 +22,7 @@ async function hundler(req, res) {
         "mongodb+srv://Arman:anoosh2009@cluster0.bkb4tch.mongodb.net/blog?retryWrites=true&w=majority"
       );
     } catch (error) {
-      res.status(500).json({ message: "Could not connect to database." });
+      res.status(500).json({ message: "Fail to connect to database." });
       return;
     }
 
@@ -32,7 +32,7 @@ async function hundler(req, res) {
       const result = await db.collection("message").insertOne(newMessage);
     } catch (error) {
       client.close();
-      res.status(500).json({ message: "Storing message failed.." });
+      res.status(500).json({ message: "Failed to store message.." });
       return;
     }
     client.close();
