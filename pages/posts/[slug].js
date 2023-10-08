@@ -22,9 +22,7 @@ export function getStaticProps(context) {
   const postData = getPostData(slug);
 
   return {
-    props: {
-      post: postData,
-    },
+    props: { post: postData },
     revalidate: 60,
   };
 }

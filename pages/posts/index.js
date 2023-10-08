@@ -22,9 +22,7 @@ export function getStaticProps() {
   const allPosts = getAllPosts();
 
   return {
-    props: {
-      posts: allPosts,
-    },
+    props: { posts: allPosts }
   };
 }
 

@@ -5,16 +5,12 @@ async function hundler(req, res) {
     const { email, name, message } = req.body;
     if (
       (!email || !email.includes("@") || !name || name.trim() === "",
-      !message || message.trim() === "")
+        !message || message.trim() === "")
     ) {
       res.status(422).json({ message: "Invalid input!" });
       return;
     }
-    const newMessage = {
-      email,
-      name,
-      message,
-    };
+    const newMessage = { email, name, message };
 
     let client;
     try {
@@ -29,7 +25,7 @@ async function hundler(req, res) {
     const db = client.db();
 
     try {
-      const result = await db.collection("message").insertOne(newMessage);
+      await db.collection("message").insertOne(newMessage);
     } catch (error) {
       client.close();
       res.status(500).json({ message: "Failed to store message.." });
