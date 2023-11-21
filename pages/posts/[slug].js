@@ -16,6 +16,7 @@ function PostDetailPage(props) {
   );
 }
 
+// Set post data into the props
 export function getStaticProps(context) {
   const slug = context.params.slug;
 
@@ -27,6 +28,7 @@ export function getStaticProps(context) {
   };
 }
 
+// Provide paths for pre rendering the data
 export function getStaticPaths() {
   const postFileNames = getPostsFiles();
 

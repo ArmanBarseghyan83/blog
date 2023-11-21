@@ -18,6 +18,7 @@ function AllPostsPage(props) {
   );
 }
 
+// Set posts data into the props
 export function getStaticProps() {
   const allPosts = getAllPosts();
 

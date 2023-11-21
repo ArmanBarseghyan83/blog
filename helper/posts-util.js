@@ -1,10 +1,12 @@
 import fs from "fs";
 import matter from "gray-matter";
 
+// Read directory using file system
 export function getPostsFiles() {
   return fs.readdirSync("./posts");
 }
 
+// Get a single post data
 export function getPostData(postFileName) {
   const postSlug = postFileName.replace(/\.md$/, "");
   const fileContent = fs.readFileSync(`./posts/${postSlug}.md`);
@@ -19,6 +21,7 @@ export function getPostData(postFileName) {
   return postData;
 }
 
+// Get all posts data
 export function getAllPosts() {
   const postFiles = getPostsFiles();
 
@@ -33,6 +36,7 @@ export function getAllPosts() {
   return sortedPosts;
 }
 
+// Get featured posts data
 export function getFeaturedPosts() {
   const allPosts = getAllPosts();
 

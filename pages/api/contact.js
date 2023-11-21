@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
 
+// Validate user inputs and store to the database
 async function hundler(req, res) {
   if (req.method === "POST") {
     const { email, name, message } = req.body;

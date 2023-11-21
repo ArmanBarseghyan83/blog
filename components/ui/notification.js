@@ -3,6 +3,7 @@ import classes from "./notification.module.css";
 function Notification(props) {
   const { title, message, status } = props;
 
+// Change the css class based on the status
   let statusClasses = "";
 
   if (status === "success") {

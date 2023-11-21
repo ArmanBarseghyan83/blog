@@ -17,6 +17,7 @@ function ContactForm() {
     }
   }, [requestStatus]);
 
+  // Fetch backend api to handle user inputs
   async function sendMessageHundler(event) {
     event.preventDefault();
 
@@ -42,7 +43,8 @@ function ContactForm() {
     setEnteredMessage("");
     setEnteredName("");
   }
-
+  
+// Set notification based on requestStatus
   let notification;
   if (requestStatus === "pending") {
     notification = {
